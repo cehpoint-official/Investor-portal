@@ -3,6 +3,7 @@ import { ResponsiveBar } from "@nivo/bar";
 import { ResponsiveLine } from "@nivo/line";
 import { ResponsivePie } from "@nivo/pie";
 import { Link } from "react-router-dom";
+import Dashboard from "../dashboard/Dashboard";
 
 const Sidebar = () => {
   return (
@@ -78,6 +79,7 @@ const Home = () => {
   return (
     <div className="flex">
       <Sidebar />
+      <Dashboard />
       {/* <div className="flex-1 p-4">
         <div style={{ height: "400px" }}>
           <ResponsiveBar
