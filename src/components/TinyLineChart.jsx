@@ -20,6 +20,7 @@ const TinyLineChart = () => {
   return (
     <div
       style={{ backgroundColor: "rgba(255, 226, 122, 0.15)", padding: "6px" }}
+      className="rounded-2xl"
     >
       <h2 style={{ textAlign: "center", color: "#000" }}>
         GMV (Gross Merchandises value)

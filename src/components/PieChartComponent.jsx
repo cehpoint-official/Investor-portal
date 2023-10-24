@@ -14,12 +14,16 @@ const PieChartComponent = () => {
     <div
       style={{
         height: "400px",
-        width: "1090px",
+        width: "1060px",
         position: "relative",
         background: "rgba(118, 84, 255, 0.08)",
         marginTop: "20px",
       }}
+      className="rounded-2xl"
     >
+      <h2 style={{ textAlign: "center", color: "#000" }}>
+        Total Expense
+      </h2>
       <ResponsivePie
         data={data}
         margin={{ top: 40, right: 200, bottom: 80, left: 80 }}

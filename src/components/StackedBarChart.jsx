@@ -46,6 +46,7 @@ const StackedBarChart = () => {
   return (
     <div
       style={{ backgroundColor: "rgba(54, 86, 253, 0.06)", marginTop: "20px" }}
+      className="rounded-2xl"
     >
       <h2 style={{ textAlign: "center", color: "#000" }}>
         Revenue/Expense /P & L

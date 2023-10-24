@@ -21,11 +21,12 @@ const BiaxialLineChart = () => {
     backgroundColor: "rgba(255, 0, 153, 0.05)",
     padding: "6px",
     marginTop: "20px",
+    borderRadius: "0.5rem", // Apply rounded-2xl border radius
   };
 
   return (
     <div style={containerStyle}>
-      <h2 style={{ textAlign: "center", color: "#000",marginTop:"16px" }}>
+      <h2 style={{ textAlign: "center", color: "#000", marginTop: "16px" }}>
         User Acquisition Progression
       </h2>
       <LineChart width={550} height={300} data={data}>

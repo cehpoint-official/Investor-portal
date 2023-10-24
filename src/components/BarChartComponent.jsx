@@ -49,7 +49,10 @@ const BarChartComponent = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: "rgba(66, 255, 251, 0.07)" }}>
+    <div
+      style={{ backgroundColor: "rgba(66, 255, 251, 0.07)" }}
+      className="rounded-2xl"
+    >
       <h2 style={{ textAlign: "center", color: "#000" }}>
         Revenue Projections from Different Streams
       </h2>
