@@ -4,6 +4,7 @@ import plussign from "../assets/dashboard/plus sign.png";
 import save from "../assets/dashboard/save.png";
 import Sidebar from "./Sidebar";
 import Table from "./Table";
+import ExitSection from "./ExitSection";
 
 const InvestorPlanning = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -65,7 +66,7 @@ const InvestorPlanning = () => {
           </h2>
         </div>
         {selectedOption === "investing" && <Table />}
-        {selectedOption === "exit" && <></>}
+        {selectedOption === "exit" && <ExitSection/>}
         {/* Rest of your content */}
       </div>
     </div>
