@@ -4,36 +4,9 @@ import { ResponsiveLine } from "@nivo/line";
 import { ResponsivePie } from "@nivo/pie";
 import { Link } from "react-router-dom";
 import Dashboard from "../dashboard/Dashboard";
+import Sidebar from "../../components/Sidebar";
 
-const Sidebar = () => {
-  return (
-    <div className="w-[290px] h-[605px] bg-[#319795] text-white">
-      <div className="text-center p-4">
-        {/* <h2 className="text-xl font-semibold">Sidebar</h2> */}
-      </div>
-      <ul className="list-none p-0 ">
-        <li className="p-4 cursor-pointer text-center">Overview</li>
-        <li className="p-4 cursor-pointer text-center">Petch Deck</li>
-        <li className="p-4 cursor-pointer">
-          {/* Use the Link component for the clickable link */}
-          <Link
-            to="/financial-projections"
-            className="block w-full py-2 bg-white rounded-xl text-[#319795] text-center font-semibold"
-          >
-            Financial Projections
-          </Link>
-        </li>
-        <li className="p-4 cursor-pointer text-center">Investing Planning</li>
-      </ul>
-      <h2 className=" p-4 text-[15px] text-center ">
-        Email Us for more information
-      </h2>
-      <h2 className=" p-4 text-[15px] text-center">
-        Visit the site BIDCHEMZ.com
-      </h2>
-    </div>
-  );
-};
+
 
 const Home = () => {
   const mostSearchedProduct = {
