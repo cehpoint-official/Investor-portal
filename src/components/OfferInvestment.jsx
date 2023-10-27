@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
+import { Link } from "react-router-dom";
 
 const OfferInvestment = () => {
   const [salesData, setSalesData] = useState("");
@@ -188,12 +189,15 @@ const OfferInvestment = () => {
               <tr>
                 <td></td>
                 <td className=" flex ml-16 mt-6 mb-6 pl-28 pr-6">
-                  <button
-                    className="btn bg-[#FB3B80] px-5 py-2 rounded   text-white"
-                    onClick={handleReset}
-                  >
-                    Save
-                  </button>
+                  <Link to="/investor-planning/offer-investment/saved-investment">
+                    <button
+                      className="btn bg-[#FB3B80] px-5 py-2 rounded   text-white"
+                      onClick={handleReset}
+                    >
+                      Save
+                    </button>
+                  </Link>
+
                   <button
                     className="btn bg-[#319795] px-3 rounded text-white ml-4"
                     onClick={handleCalculateTime}
