@@ -57,7 +57,7 @@ const InvestorPlanning = () => {
           <h2
             className={`cursor-pointer inline-block ${
               selectedOption === "exit"
-                ? "border-b-2 border-[#319795] font-bold text-xl"
+                ? "rounded border-b-4 border-[#319795] text-[#319795] font-bold text-xl p-2"
                 : ""
             }`}
             onClick={() => handleOptionClick("exit")}
@@ -66,7 +66,7 @@ const InvestorPlanning = () => {
           </h2>
         </div>
         {selectedOption === "investing" && <Table />}
-        {selectedOption === "exit" && <ExitSection/>}
+        {selectedOption === "exit" && <ExitSection />}
         {/* Rest of your content */}
       </div>
     </div>
