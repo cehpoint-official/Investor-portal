@@ -5,6 +5,7 @@ import save from "../assets/dashboard/save.png";
 import Sidebar from "./Sidebar";
 import Table from "./Table";
 import ExitSection from "./ExitSection";
+import TopBar from "./TopBar";
 
 const InvestorPlanning = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -19,23 +20,6 @@ const InvestorPlanning = () => {
 
   //   Topber here
 
-  const TopBar = () => {
-    return (
-      <div className="w-full flex justify-between p-4 items-center">
-        <div className="flex items-center">
-          <div className="mr-4 text-5xl">⬅</div>
-        </div>
-        <div className="flex items-center">
-          <button className="mr-4 btn bg-[#FBBA3B] p-3 text-white">
-            View Our Ask
-          </button>
-          <button className="mr-4 bg-[#36B7FF] p-3 text-white">
-            Offer Investment
-          </button>
-        </div>
-      </div>
-    );
-  };
   //   Investor table here
 
   return (

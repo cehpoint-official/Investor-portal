@@ -4,6 +4,7 @@ import Main from "../layouts/Main";
 import Home from "../pages/Home/Home";
 import InvestorPlanning from "../components/InvestorPlanning";
 import Financial from "../components/Financial";
+import OfferInvestment from "../components/OfferInvestment";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: "/investor-planning",
         element: <InvestorPlanning />,
+        children: [],
+      },
+      {
+        path: "/investor-planning/offer-investment",
+        element: <OfferInvestment />,
       },
     ],
   },
