@@ -9,7 +9,7 @@ import TinyLineChart from "../../components/TinyLineChart";
 import BiaxialLineChart from "../../components/BiaxialLineChart";
 import StackedBarChart from "../../components/StackedBarChart";
 import PieChartComponent from "../../components/PieChartComponent";
-import topbarlogo from '../../assets/dashboard/topbar.png'
+import topbarlogo from "../../assets/dashboard/topbar.png";
 
 const Dashboard = () => {
   return (
@@ -21,10 +21,10 @@ const Dashboard = () => {
               <div class="flex items-center">
                 <div class="mr-3">
                   <div class="relative w-full  h-10">
-                   <img src={topbarlogo} alt="logo" />
+                    <img src={topbarlogo} alt="logo" />
                   </div>
                 </div>
-               
+
                 <Link href="#">
                   <button
                     class="middle none font-sans font-bold center uppercase transition-all 
@@ -192,7 +192,9 @@ const Dashboard = () => {
             <div class="mb-4">
               {/* Bar chart */}
               <div className="flex gap-4">
-                <BarChartComponent />
+                <Link to="/revenue">
+                  <BarChartComponent />
+                </Link>
                 {/* Tiny Chart */}
                 <TinyLineChart />
               </div>
@@ -200,7 +202,9 @@ const Dashboard = () => {
                 <BiaxialLineChart />
                 <StackedBarChart />
               </div>
-              <PieChartComponent />
+              <Link to="/total-expense">
+                <PieChartComponent />
+              </Link>
             </div>
           </div>
         </div>

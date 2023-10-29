@@ -6,6 +6,8 @@ import InvestorPlanning from "../components/InvestorPlanning";
 import Financial from "../components/Financial";
 import OfferInvestment from "../components/OfferInvestment";
 import SavedInvestment from "../components/SavedInvestment";
+import TotalExpense from "../components/TotalExpense";
+import Revenue from "../components/Revenue";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,16 @@ const router = createBrowserRouter([
         path: "/investor-planning",
         element: <InvestorPlanning />,
         children: [],
+      },
+      {
+        path: "/total-expense",
+        element: <TotalExpense />,
+        
+      },
+      {
+        path: "/revenue",
+        element: <Revenue />,
+        
       },
       {
         path: "/investor-planning/offer-investment",
