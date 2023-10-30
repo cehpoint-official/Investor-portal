@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
 import { Link } from "react-router-dom";
 import topbarlogo from "../assets/dashboard/topbar.png";
 
 const Revenue = () => {
+  const [showProfitButtons, setShowProfitButtons] = useState(false);
+  const [showProfitSection, setShowProfitSection] = useState(false);
+  const [showLossSection, setShowLossSection] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const toggleProfit = () => {
+    setShowProfitSection(true);
+    setShowLossSection(false);
+  };
+
+  const toggleLoss = () => {
+    setShowLossSection(true);
+    setShowProfitSection(false);
+  };
   return (
     <div className="flex">
       <Sidebar />
@@ -74,11 +88,60 @@ const Revenue = () => {
                 Revenue
               </button>
               <button className="bg-[#783DF4] text-white text-center px-5 py-1 rounded-lg">
-                Expence Year-wise
+                Expense Year-wise
               </button>
-              <button className="bg-[#FFD600] text-white text-center px-5 py-1 rounded-lg">
-                Profit/ Loss
-              </button>
+              <div className="relative">
+                <button
+                  className="bg-[#FFD600] text-white text-center px-5 py-1 rounded-lg"
+                  onClick={() => setShowProfitButtons(!showProfitButtons)}
+                >
+                  Profit/ Loss
+                </button>
+                {showProfitButtons && (
+                  <div
+                    className="absolute right-0 left-10 mt-2 bg-white text-black text-center px-2 py-2 
+                  rounded-lg space-y-2 "
+                  >
+                    <div className="flex">
+                      <button
+                        onClick={toggleProfit}
+                        className="bg-[#0FDF49] text-white text-center px-5 py-1 rounded-lg mr-6"
+                      >
+                        Profit
+                      </button>
+                      <button
+                        onClick={toggleLoss}
+                        className="bg-[#FF3D3D] text-white text-center px-6 py-1 rounded-lg"
+                      >
+                        Loss
+                      </button>
+                    </div>
+                    {/* Profit section */}
+                    {showProfitSection && (
+                      <div className="mt-10">
+                        <h2>Profit </h2>
+                        {/* Your content for the Profit section */}
+                        <div
+                          className="progress-circle"
+                          onClick={() => setProgress(progress + 10)}
+                        >
+                          <div
+                            className="progress"
+                            style={{ transform: `rotate(${progress}deg)` }}
+                          ></div>
+                        </div>
+                      </div>
+                    )}
+                    {/* loss section  */}
+                    {showLossSection && (
+                      <div className="mt-10">
+                        <h2>Loss </h2>
+                        {/* Your content for the Loss section */}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Left side button */}
