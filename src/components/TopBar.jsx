@@ -13,7 +13,10 @@ const TopBar = () => {
     <>
       <div className="w-full flex justify-between p-4 items-center">
         <div className="flex items-center">
-          <div className="mr-4 text-5xl">⬅</div>
+          <Link to="/">
+            {" "}
+            <div className="mr-4 text-5xl">⬅</div>
+          </Link>
         </div>
         <div className="flex items-center">
           <button className="mr-4 btn bg-[#FBBA3B] p-3 text-white">
