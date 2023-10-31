@@ -1,0 +1,80 @@
+.progress-barr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(from -360deg, #ff3d3d 75%, #d4d2d2 37%);
+}
+
+.progress-barr::before {
+  content: "1st Year \A 0.25 Lac";
+  white-space: pre;
+}
+/* progress bar 1 */
+.progress-barr1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(
+      from -180deg,
+      /* Rotate the color by specifying the 'from' angle */ #ff3d3d 0% 15%,
+      #d4d2d2 37%
+    );
+}
+
+.progress-barr1::before {
+  content: "2nd Year \A 0.25 Lac";
+  white-space: pre;
+}
+
+/* progress bar 2 */
+.progress-barr2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(
+      from -90deg,
+      /* Rotate the color by specifying the 'from' angle */ #ff3d3d 0% 55%,
+      #d4d2d2 37%
+    );
+}
+
+.progress-barr2::before {
+  content: "3nd Year \A 0.25 Lac";
+  white-space: pre;
+}
+/* progress bar 3 */
+.progress-barr3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(
+      from -90deg, /* Rotate the color by specifying the 'from' angle */
+      #ff3d3d 0% 80%, /* Red color for the top half (0% to 50%) */
+      #d4d2d2 50% 100% /* Gray color for the bottom half (50% to 100%) */
+    );
+}
+
+.progress-barr3::before {
+  content: "4th Year \A 0.25 Lac";
+  white-space: pre;
+}
+

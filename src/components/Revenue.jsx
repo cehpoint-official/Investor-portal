@@ -3,6 +3,8 @@ import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
 import { Link } from "react-router-dom";
 import topbarlogo from "../assets/dashboard/topbar.png";
+import RadialProgress from "./RadialProgress";
+import RadialProgressLossection from "./RadialProgressLossSection";
 
 const Revenue = () => {
   const [showProfitButtons, setShowProfitButtons] = useState(false);
@@ -117,28 +119,11 @@ const Revenue = () => {
                       </button>
                     </div>
                     {/* Profit section */}
-                    {showProfitSection && (
-                      <div className="mt-10">
-                        <h2>Profit </h2>
-                        {/* Your content for the Profit section */}
-                        <div
-                          className="progress-circle"
-                          onClick={() => setProgress(progress + 10)}
-                        >
-                          <div
-                            className="progress"
-                            style={{ transform: `rotate(${progress}deg)` }}
-                          ></div>
-                        </div>
-                      </div>
-                    )}
+                    <RadialProgress showProfitSection={showProfitSection} />
                     {/* loss section  */}
-                    {showLossSection && (
-                      <div className="mt-10">
-                        <h2>Loss </h2>
-                        {/* Your content for the Loss section */}
-                      </div>
-                    )}
+                    <RadialProgressLossection
+                      showLossSection={showLossSection}
+                    />
                   </div>
                 )}
               </div>
