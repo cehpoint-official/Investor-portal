@@ -5,12 +5,18 @@ import { Link } from "react-router-dom";
 import topbarlogo from "../assets/dashboard/topbar.png";
 import RadialProgress from "./RadialProgress";
 import RadialProgressLossection from "./RadialProgressLossSection";
+import RevenuePieChart from "./RevenuePieChart";
 
 const Revenue = () => {
   const [showProfitButtons, setShowProfitButtons] = useState(false);
   const [showProfitSection, setShowProfitSection] = useState(false);
   const [showLossSection, setShowLossSection] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [sectionVisible, setSectionVisible] = useState(false);
+
+  const toggleSection = () => {
+    setSectionVisible(!sectionVisible);
+  };
 
   const toggleProfit = () => {
     setShowProfitSection(true);
@@ -130,22 +136,33 @@ const Revenue = () => {
             </div>
 
             {/* Left side button */}
-            <div className="mt-10 inline:block gap-4">
-              <button className="bg-[#FD6060] text-white text-center px-5 py-1 rounded-lg mb-5">
-                Sales brokerage
-              </button>
-              <br />
-              <button className="bg-[#783DF4] text-white text-center px-5 py-1 rounded-lg mb-5">
-                Logistic
-              </button>
-              <br />
-              <button className="bg-[#FFD600] text-white text-center px-5 py-1 rounded-lg mb-5">
-                Fintech
-              </button>
-              <br />
-              <button className="bg-[#00B1D8] text-white text-center px-5 py-1 rounded-lg">
-                Subscription
-              </button>
+            <div className="flex">
+              <div className="mt-10 inline:block gap-4">
+                <button
+                  onClick={toggleSection}
+                  className="bg-[#FD6060] text-white text-center px-5 py-1 rounded-lg mb-5"
+                >
+                  Sales brokerage
+                </button>
+                <br />
+                <button className="bg-[#783DF4] text-white text-center px-5 py-1 rounded-lg mb-5">
+                  Logistic
+                </button>
+                <br />
+                <button className="bg-[#FFD600] text-white text-center px-5 py-1 rounded-lg mb-5">
+                  Fintech
+                </button>
+                <br />
+                <button className="bg-[#00B1D8] text-white text-center px-5 py-1 rounded-lg">
+                  Subscription
+                </button>
+              </div>
+              {sectionVisible && (
+                <div className="ml-10 mt-10">
+                  {/* Render your RevenuePieChart component here */}
+                  <RevenuePieChart sectionVisible={sectionVisible} />
+                </div>
+              )}
             </div>
           </div>
         </div>
