@@ -1,67 +1,70 @@
 import React from "react";
-import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
+import { ResponsivePie } from "@nivo/pie";
 
 const RevenuePieChart = ({ sectionVisible }) => {
-const data = [
-  { name: "Category A", value: 30 },
-  { name: "Category B", value: 20 },
-  { name: "Category C", value: 25 },
-  { name: "Category D", value: 15 },
-];
-
-const COLORS = ["#FD6060", "#783DF4", "#FFD600", "#00B1D8"];
-  const CustomLabel = ({
-    cx,
-    cy,
-    midAngle,
-    innerRadius,
-    outerRadius,
-    percent,
-  }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x = cx + radius * Math.cos(-midAngle * (Math.PI / 180));
-    const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
-
-    return (
-      <text
-        x={x}
-        y={y}
-        fill="white"
-        textAnchor={x > cx ? "start" : "end"}
-        dominantBaseline="central"
-      >
-        {`${(percent * 100).toFixed(0)}%`}
-      </text>
-    );
-  };
+  const data = [
+    { id: "Category A", value: 30 },
+    { id: "Category B", value: 20 },
+    { id: "Category C", value: 25 },
+    { id: "Category D", value: 15 },
+  ];
 
   return (
     <div>
       {sectionVisible && (
-        <div>
-          <PieChart width={400} height={300}>
-            <Pie
+        <div style={{ display: "flex", width: 600, height: 300 }}>
+          <div style={{ flex: 1 }}>
+            <ResponsivePie
               data={data}
-              cx={150}
-              cy={150}
-              innerRadius={60}
-              outerRadius={80}
-              fill="#8884d8"
-              paddingAngle={5}
-              dataKey="value"
-              labelLine={false}
-              label={CustomLabel}
-            >
+              margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+              innerRadius={0.5}
+              padAngle={0.7}
+              cornerRadius={3}
+              colors={{ scheme: "category10" }}
+              borderWidth={1}
+              borderColor={{ from: "color", modifiers: [["darker", 0]] }}
+              enableArcLinkLabels={false}
+              radialLabelsSkipAngle={10}
+              radialLabelsTextXOffset={6}
+              radialLabelsTextColor="#ffffff"
+              radialLabelsLinkOffset={0}
+              radialLabelsLinkDiagonalLength={16}
+              radialLabelsLinkHorizontalLength={24}
+              radialLabelsLinkStrokeWidth={1}
+              radialLabelsLinkColor={{ from: "color" }}
+              slicesLabelsSkipAngle={10}
+              slicesLabelsTextColor="transparent"
+              animate={true}
+              motionStiffness={90}
+              motionDamping={15}
+            />
+          </div>
+          <div style={{ flex: 1 }}>
+            <div style={{ display: "flex", flexDirection: "column" }}>
               {data.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={COLORS[index % COLORS.length]}
-                />
+                <div
+                  key={index}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: 8,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 12,
+                      height: 12,
+                      backgroundColor: data[index].color,
+                      marginRight: 8,
+                    }}
+                  >
+                    .
+                  </div>
+                  <div>{entry.id}</div>
+                </div>
               ))}
-            </Pie>
-            <Tooltip />
-            <Legend verticalAlign="middle" align="right" />
-          </PieChart>
+            </div>
+          </div>
         </div>
       )}
     </div>
