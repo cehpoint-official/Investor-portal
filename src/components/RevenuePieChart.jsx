@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ResponsivePie } from "@nivo/pie";
 
 const RevenuePieChart = ({ sectionVisible }) => {
@@ -8,6 +8,15 @@ const RevenuePieChart = ({ sectionVisible }) => {
     { id: "Category C", value: 25 },
     { id: "Category D", value: 15 },
   ];
+ const [selectedSlice, setSelectedSlice] = useState(null);
+
+ const handleClick = (event, slice) => {
+   if (slice.id === selectedSlice) {
+     setSelectedSlice(null);
+   } else {
+     setSelectedSlice(slice.id);
+   }
+ };
 
   return (
     <div>
@@ -24,6 +33,7 @@ const RevenuePieChart = ({ sectionVisible }) => {
               borderWidth={1}
               borderColor={{ from: "color", modifiers: [["darker", 0]] }}
               enableArcLinkLabels={false}
+              enableArcLabels={false}
               radialLabelsSkipAngle={10}
               radialLabelsTextXOffset={6}
               radialLabelsTextColor="#ffffff"
@@ -37,33 +47,96 @@ const RevenuePieChart = ({ sectionVisible }) => {
               animate={true}
               motionStiffness={90}
               motionDamping={15}
+              fill={[
+                {
+                  match: {
+                    id: "ruby",
+                  },
+                  id: "dots",
+                },
+                {
+                  match: {
+                    id: "c",
+                  },
+                  id: "dots",
+                },
+                {
+                  match: {
+                    id: "go",
+                  },
+                  id: "dots",
+                },
+                {
+                  match: {
+                    id: "python",
+                  },
+                  id: "dots",
+                },
+                {
+                  match: {
+                    id: "scala",
+                  },
+                  id: "lines",
+                },
+                {
+                  match: {
+                    id: "lisp",
+                  },
+                  id: "lines",
+                },
+                {
+                  match: {
+                    id: "elixir",
+                  },
+                  id: "lines",
+                },
+                {
+                  match: {
+                    id: "javascript",
+                  },
+                  id: "lines",
+                },
+              ]}
+              legends={[
+                {
+                  anchor: "right",
+                  direction: "column",
+
+                  justify: false,
+                  translateX: 50,
+                  translateY: 56,
+                  itemsSpacing: 10,
+                  itemWidth: 100,
+                  itemHeight: 18,
+                  itemTextColor: "#999",
+                  itemDirection: "left-to-right",
+                  itemOpacity: 1,
+                  symbolSize: 18,
+                  symbolShape: "circle",
+                  effects: [
+                    {
+                      on: "hover",
+                      style: {
+                        itemTextColor: "#000",
+                      },
+                    },
+                  ],
+                },
+              ]}
+              onClick={(event, slice) => handleClick(event, slice)}
+              isInteractive={true}
             />
           </div>
-          <div style={{ flex: 1 }}>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              {data.map((entry, index) => (
-                <div
-                  key={index}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    marginBottom: 8,
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 12,
-                      height: 12,
-                      backgroundColor: data[index].color,
-                      marginRight: 8,
-                    }}
-                  >
-                    .
-                  </div>
-                  <div>{entry.id}</div>
+          <div>
+            {selectedSlice && (
+              <div>
+                {/* Render your section corresponding to the selected slice here */}
+                <div className="text-red-800">
+                  You clicked on: {selectedSlice}
+                  {/* Add content specific to the selected slice */}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       )}

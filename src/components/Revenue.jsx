@@ -16,17 +16,25 @@ const Revenue = () => {
 
   const toggleSection = () => {
     setSectionVisible(!sectionVisible);
+    // Close the "Profit" and "Sales brokerage" sections
+    setShowProfitSection(false);
+    setShowLossSection(false);
   };
 
   const toggleProfit = () => {
     setShowProfitSection(true);
     setShowLossSection(false);
+    // Close the "Sales brokerage" section
+    setSectionVisible(false);
   };
 
   const toggleLoss = () => {
     setShowLossSection(true);
     setShowProfitSection(false);
+    // Close the "Sales brokerage" section
+    setSectionVisible(false);
   };
+
   return (
     <div className="flex">
       <Sidebar />
