@@ -68,17 +68,7 @@ const TotalExpense = () => {
               information
             </p>
             {/* Topbar button */}
-            {/* <div className="mt-10 flex gap-4">
-              <button className="bg-[#FD8660] text-white text-center px-5 py-1 rounded-lg">
-                Revenue
-              </button>
-              <button className="bg-[#783DF4] text-white text-center px-5 py-1 rounded-lg">
-                Expence Year-wise
-              </button>
-              <button className="bg-[#FFD600] text-white text-center px-5 py-1 rounded-lg">
-                Profit/ Loss
-              </button>
-            </div> */}
+            
 
             {/* Left side button */}
             <div className="mt-10 inline:block gap-4">
