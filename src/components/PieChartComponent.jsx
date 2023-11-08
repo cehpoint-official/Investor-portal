@@ -21,9 +21,7 @@ const PieChartComponent = () => {
       }}
       className="rounded-2xl"
     >
-      <h2 style={{ textAlign: "center", color: "#000" }}>
-        Total Expense
-      </h2>
+      <h2 style={{ textAlign: "center", color: "#000" }}>Total Expense</h2>
       <ResponsivePie
         data={data}
         margin={{ top: 40, right: 200, bottom: 80, left: 80 }}
@@ -35,8 +33,8 @@ const PieChartComponent = () => {
         borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
         slicesLabelsSkipAngle={10}
         slicesLabelsTextColor="#333333"
-        enableRadialLabels={false}
-        enableSlicesLabels={false} // Set this to false to remove the labels from the pie chart body
+        enableArcLinkLabels={false}
+        enableArcLabels={false}
         legends={[
           {
             anchor: "right",
