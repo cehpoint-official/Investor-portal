@@ -30,7 +30,7 @@ const Sidebar = () => {
           <Link to="/">Overview</Link>
         </li>
         <li className="p-2 mx-2 cursor-pointer text-center">
-          <Link to="/">Pitch Deck</Link>
+          <Link to="/total-revenue">Pitch Deck</Link>
         </li>
         <li
           className={`p-2 mx-2 cursor-pointer text-center ${

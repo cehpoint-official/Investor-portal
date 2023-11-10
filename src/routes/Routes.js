@@ -8,6 +8,8 @@ import OfferInvestment from "../components/OfferInvestment";
 import SavedInvestment from "../components/SavedInvestment";
 import TotalExpense from "../components/TotalExpense";
 import Revenue from "../components/Revenue";
+import TotalRevenue from "../components/TotalRevenue";
+import RevenueProjections from "../components/RevenueProjections";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,16 @@ const router = createBrowserRouter([
       {
         path: "/revenue",
         element: <Revenue />,
+        
+      },
+      {
+        path: "/total-revenue",
+        element: <TotalRevenue />,
+        
+      },
+      {
+        path: "/revenue-projections",
+        element: <RevenueProjections />,
         
       },
       {

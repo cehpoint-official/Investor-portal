@@ -3,20 +3,20 @@ import { ResponsivePie } from "@nivo/pie";
 
 const RevenuePieChart = ({ sectionVisible }) => {
   const data = [
-    { id: "Category A", value: 30 },
-    { id: "Category B", value: 20 },
-    { id: "Category C", value: 25 },
-    { id: "Category D", value: 15 },
+    { id: "Revenue - Sales brokerage @ 1.65%", value: 30 },
+    { id: "Revenue - Logistic @ 2%", value: 20 },
+    { id: "Revenue - Fintech @ .10%", value: 25 },
+    { id: "Revenue - Subscription @ 10k/PA", value: 15 },
   ];
- const [selectedSlice, setSelectedSlice] = useState(null);
+  const [selectedSlice, setSelectedSlice] = useState(null);
 
- const handleClick = (event, slice) => {
-   if (slice.id === selectedSlice) {
-     setSelectedSlice(null);
-   } else {
-     setSelectedSlice(slice.id);
-   }
- };
+  const handleClick = (event, slice) => {
+    if (slice.id === selectedSlice) {
+      setSelectedSlice(null);
+    } else {
+      setSelectedSlice(slice.id);
+    }
+  };
 
   return (
     <div>
@@ -25,7 +25,7 @@ const RevenuePieChart = ({ sectionVisible }) => {
           <div style={{ flex: 1 }}>
             <ResponsivePie
               data={data}
-              margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+              margin={{ top: 40, right: 30, bottom: 40, left: 20 }}
               innerRadius={0.5}
               padAngle={0.7}
               cornerRadius={3}
@@ -103,11 +103,11 @@ const RevenuePieChart = ({ sectionVisible }) => {
                   direction: "column",
 
                   justify: false,
-                  translateX: 50,
+                  translateX: 20,
                   translateY: 56,
-                  itemsSpacing: 10,
-                  itemWidth: 100,
-                  itemHeight: 18,
+                  itemsSpacing: 5,
+                  itemWidth: 170,
+                  itemHeight: 20,
                   itemTextColor: "#999",
                   itemDirection: "left-to-right",
                   itemOpacity: 1,
@@ -126,17 +126,6 @@ const RevenuePieChart = ({ sectionVisible }) => {
               onClick={(event, slice) => handleClick(event, slice)}
               isInteractive={true}
             />
-          </div>
-          <div>
-            {selectedSlice && (
-              <div>
-                {/* Render your section corresponding to the selected slice here */}
-                <div className="text-red-800">
-                  You clicked on: {selectedSlice}
-                  {/* Add content specific to the selected slice */}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       )}

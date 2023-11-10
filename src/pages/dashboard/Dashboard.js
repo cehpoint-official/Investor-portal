@@ -192,7 +192,7 @@ const Dashboard = () => {
             <div class="mb-4">
               {/* Bar chart */}
               <div className="flex gap-4">
-                <Link to="/revenue">
+                <Link to="/revenue-projections">
                   <BarChartComponent />
                 </Link>
                 {/* Tiny Chart */}
@@ -200,7 +200,10 @@ const Dashboard = () => {
               </div>
               <div className="flex gap-4">
                 <BiaxialLineChart />
-                <StackedBarChart />
+
+                <Link to="/revenue">
+                  <StackedBarChart />
+                </Link>
               </div>
               <Link to="/total-expense">
                 <PieChartComponent />

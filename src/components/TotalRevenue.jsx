@@ -5,12 +5,13 @@ import topbarlogo from "../assets/dashboard/topbar.png";
 import FinancialLineChart from "./FinancialLineChart";
 import { FaSearchPlus } from "react-icons/fa";
 import { FaSearchMinus } from "react-icons/fa";
-
+import RevenueTinyLineChart from "./RevenueTinyLineChart";
 
 const Financial = () => {
   return (
     <div className="flex">
       <Sidebar />
+      {/* navbar */}
       <div className="p-4 xl:ml-10 w-full">
         <nav class="block w-full max-w-full bg-transparent text-white shadow-none rounded-xl transition-all px-0 py-1">
           <div class="flex flex-col-reverse justify-end gap-6 md:flex-row md:items-center">
@@ -58,7 +59,7 @@ const Financial = () => {
           </div>
         </nav>
         {/* Revenuse Section here */}
-        <div>
+        <div className="ml-20 mb-6">
           <div className="flex items-center">
             <Link to="/">
               {" "}
@@ -66,13 +67,11 @@ const Financial = () => {
             </Link>
           </div>
           <div className="mt-6">
-            <h2 className="font-bold text-2xl">
-              User Acquisition Progression{" "}
-            </h2>
-            <p>
+            <h2 className="font-bold text-2xl">Toatl Revenue </h2>
+            {/* <p>
               Click one by one for better understanding and get complete
               information
-            </p>
+            </p> */}
             {/* Topbar button */}
             {/* <div className="mt-10 flex gap-4">
               <button className="bg-[#FD8660] text-white text-center px-5 py-1 rounded-lg">
@@ -119,7 +118,8 @@ const Financial = () => {
                 </div>
               </button>
             </div>
-            <FinancialLineChart />
+            {/* Revenue Tiny Chart */}
+            <RevenueTinyLineChart />
           </div>
         </div>
       </div>
