@@ -9,7 +9,6 @@ import Insights from './Pages/Insights/Insights';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-
 function App() {
 
   return (
