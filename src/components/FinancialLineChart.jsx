@@ -50,13 +50,19 @@ const FinancialLineChart = () => {
         <Line
           type="monotone"
           dataKey="value1"
-          stroke="#8884d8"
+          stroke="#57DACC"
           yAxisId="left"
         />
         <Line
           type="monotone"
           dataKey="value2"
-          stroke="#82ca9d"
+          stroke="#F47780"
+          yAxisId="left"
+        />
+        <Line
+          type="monotone"
+          dataKey="value3"
+          stroke="#FFC700"
           yAxisId="left"
         />
       </LineChart>

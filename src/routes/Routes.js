@@ -10,6 +10,8 @@ import TotalExpense from "../components/TotalExpense";
 import Revenue from "../components/Revenue";
 import TotalRevenue from "../components/TotalRevenue";
 import RevenueProjections from "../components/RevenueProjections";
+import TotalSales from "../components/TotalSales";
+import TotalProfit from "../components/TotalProfit";
 
 const router = createBrowserRouter([
   {
@@ -33,22 +35,26 @@ const router = createBrowserRouter([
       {
         path: "/total-expense",
         element: <TotalExpense />,
-        
       },
       {
         path: "/revenue",
         element: <Revenue />,
-        
       },
       {
         path: "/total-revenue",
         element: <TotalRevenue />,
-        
+      },
+      {
+        path: "/total-sales",
+        element: <TotalSales />,
+      },
+      {
+        path: "/Total-profit",
+        element: <TotalProfit />,
       },
       {
         path: "/revenue-projections",
         element: <RevenueProjections />,
-        
       },
       {
         path: "/investor-planning/offer-investment",

@@ -26,36 +26,40 @@ const BiaxialLineChart = () => {
 
   return (
     <div style={containerStyle}>
-      <h2 style={{ textAlign: "center", color: "#000", marginTop: "16px" }}>
+      <h2
+        style={{
+          fontWeight: "bold",
+          margin: "4px",
+          color: "#000",
+          marginTop: "16px",
+          marginBottom: "16px"
+        }}
+      >
         User Acquisition Progression
       </h2>
-      <LineChart width={550} height={300} data={data}>
+      <LineChart width={440} height={300} data={data} margin={{ right: 20 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis yAxisId="left" />
-        <YAxis yAxisId="right" orientation="right" />
+        <YAxis />
         <Tooltip />
         <Legend />
         <Line
           type="monotone"
           dataKey="value1"
-          stroke="#8884d8"
+          stroke="#57DACC"
           name="Value 1"
-          yAxisId="left"
         />
         <Line
           type="monotone"
           dataKey="value2"
-          stroke="#82ca9d"
+          stroke="#F47780"
           name="Value 2"
-          yAxisId="left"
         />
         <Line
           type="monotone"
           dataKey="value3"
-          stroke="#ffc658"
+          stroke="#FFC700"
           name="Value 3"
-          yAxisId="right"
         />
       </LineChart>
     </div>

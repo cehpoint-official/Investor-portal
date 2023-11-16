@@ -12,31 +12,31 @@ import {
 const StackedBarChart = () => {
   const data = [
     {
-      category: "Category 1",
+      category: "2019",
       option1: 100,
       option2: 120,
       option3: 80,
     },
     {
-      category: "Category 2",
+      category: "2020",
       option1: 200,
       option2: 180,
       option3: 220,
     },
     {
-      category: "Category 3",
+      category: "2021",
       option1: 300,
       option2: 280,
       option3: 320,
     },
     {
-      category: "Category 4",
+      category: "2022",
       option1: 400,
       option2: 380,
       option3: 420,
     },
     {
-      category: "Category 5",
+      category: "2023",
       option1: 500,
       option2: 480,
       option3: 520,
@@ -48,18 +48,25 @@ const StackedBarChart = () => {
       style={{ backgroundColor: "rgba(54, 86, 253, 0.06)", marginTop: "20px" }}
       className="rounded-2xl"
     >
-      <h2 style={{ textAlign: "center", color: "#000" }}>
+      <h2
+        style={{
+          fontWeight: "bold",
+          margin: "4px",
+          color: "#000",
+          marginBottom: "16px",
+        }}
+      >
         Revenue/Expense /P & L
       </h2>
-      <BarChart width={500} height={400} data={data}>
+      <BarChart width={600} height={400} data={data} margin={{ right: 20 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="category" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="option1" fill="#8884d8" name="Option 1" />
-        <Bar dataKey="option2" fill="#82ca9d" name="Option 2" />
-        <Bar dataKey="option3" fill="#ffc658" name="Option 3" />
+        <Bar dataKey="option1" fill="#3656FD" name="Option 1" />
+        <Bar dataKey="option2" fill="#FFAE10" name="Option 2" />
+        <Bar dataKey="option3" fill="#37FA17" name="Option 3" />
       </BarChart>
     </div>
   );

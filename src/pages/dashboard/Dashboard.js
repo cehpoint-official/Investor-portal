@@ -196,14 +196,15 @@ const Dashboard = () => {
                   <BarChartComponent />
                 </Link>
                 {/* Tiny Chart */}
-                <TinyLineChart />
+                <Link to="/total-sales">
+                  <TinyLineChart />
+                </Link>
               </div>
               <div className="flex gap-4">
-                <BiaxialLineChart />
-
                 <Link to="/revenue">
                   <StackedBarChart />
                 </Link>
+                <BiaxialLineChart />
               </div>
               <Link to="/total-expense">
                 <PieChartComponent />

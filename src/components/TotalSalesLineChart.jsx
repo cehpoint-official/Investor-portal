@@ -9,7 +9,7 @@ import {
   Legend,
 } from "recharts";
 
-const RevenueTinyLineChart = () => {
+const TotalSalesTinyLineChart = () => {
   const data = [
     { name: "Jan", value: 0 },
     { name: "Feb", value: 30 },
@@ -48,12 +48,12 @@ const RevenueTinyLineChart = () => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Line type="monotone" dataKey="value" stroke="#3A95FF" />
+        <Line type="monotone" dataKey="value" stroke="#0CE549" />
         {/* <Legend verticalAlign="bottom" align="center" iconType="circle" /> */}
-        <Line type="monotone" dataKey="value" stroke="#3A95FF" name="Value" />
+        <Line type="monotone" dataKey="value" stroke="#0CE549" name="Value" />
       </LineChart>
     </div>
   );
 };
 
-export default RevenueTinyLineChart;
+export default TotalSalesTinyLineChart;

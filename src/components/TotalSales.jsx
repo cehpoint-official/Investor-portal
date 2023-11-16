@@ -5,13 +5,12 @@ import topbarlogo from "../assets/dashboard/topbar.png";
 import FinancialLineChart from "./FinancialLineChart";
 import { FaSearchPlus } from "react-icons/fa";
 import { FaSearchMinus } from "react-icons/fa";
-import RevenueTinyLineChart from "./RevenueTinyLineChart";
+import TotalSalesTinyLineChart from "./TotalSalesLineChart";
 
-const Financial = () => {
+const TotalSales = () => {
   return (
     <div className="flex">
       <Sidebar />
-      {/* navbar */}
       <div className="p-4 xl:ml-10 w-full">
         <nav class="block w-full max-w-full bg-transparent text-white shadow-none rounded-xl transition-all px-0 py-1">
           <div class="flex flex-col-reverse justify-end gap-6 md:flex-row md:items-center">
@@ -59,7 +58,7 @@ const Financial = () => {
           </div>
         </nav>
         {/* Revenuse Section here */}
-        <div className="ml-20 mb-6">
+        <div>
           <div className="flex items-center">
             <Link to="/">
               {" "}
@@ -67,7 +66,7 @@ const Financial = () => {
             </Link>
           </div>
           <div className="mt-6">
-            <h2 className="font-bold text-2xl">Toatl Revenue </h2>
+            <h2 className="font-bold text-2xl">Total Sales </h2>
             {/* <p>
               Click one by one for better understanding and get complete
               information
@@ -118,10 +117,7 @@ const Financial = () => {
                 </div>
               </button>
             </div>
-            {/* Revenue Tiny Chart */}
-            <Link to='/Total-profit'>
-              <RevenueTinyLineChart />
-            </Link>
+            <TotalSalesTinyLineChart />
           </div>
         </div>
       </div>
@@ -129,5 +125,4 @@ const Financial = () => {
   );
 };
 
-export default Financial;
-
+export default TotalSales;

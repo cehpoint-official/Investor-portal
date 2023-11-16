@@ -6,7 +6,6 @@ import FinancialLineChart from "./FinancialLineChart";
 import { FaSearchPlus } from "react-icons/fa";
 import { FaSearchMinus } from "react-icons/fa";
 
-
 const Financial = () => {
   return (
     <div className="flex">
@@ -128,4 +127,3 @@ const Financial = () => {
 };
 
 export default Financial;
-<h1>finance</h1>;

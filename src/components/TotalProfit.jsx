@@ -1,18 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import topbarlogo from "../assets/dashboard/topbar.png";
 import FinancialLineChart from "./FinancialLineChart";
 import { FaSearchPlus } from "react-icons/fa";
 import { FaSearchMinus } from "react-icons/fa";
-import RevenueTinyLineChart from "./RevenueTinyLineChart";
+import TotalSalesTinyLineChart from "./TotalSalesLineChart";
+import TotalProfitChart from "./TotalProfitPieChart";
+import RadialProgress from "./RadialProgress";
+import RadialProgressLossection from "./RadialProgressLossSection";
 
-const Financial = () => {
+const TotalProfit = () => {
+  const [showProfitButtons, setShowProfitButtons] = useState(false);
+  const [showProfitSection, setShowProfitSection] = useState(false);
+  const [showLossSection, setShowLossSection] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [sectionVisible, setSectionVisible] = useState(false);
+
+  const toggleSection = () => {
+    setSectionVisible(!sectionVisible);
+    // Close the "Profit" and "Sales brokerage" sections
+    setShowProfitSection(false);
+    setShowLossSection(false);
+  };
+
+  const toggleProfit = () => {
+    setShowProfitSection(true);
+    setShowLossSection(false);
+    // Close the "Sales brokerage" section
+    setSectionVisible(false);
+  };
+
+  const toggleLoss = () => {
+    setShowLossSection(true);
+    setShowProfitSection(false);
+    // Close the "Sales brokerage" section
+    setSectionVisible(false);
+  };
+
+  const handleClick = () => {
+    // Logic to perform when the chart section is clicked
+    console.log("Total Profit Chart clicked!");
+    // Add navigation logic or any other action here
+  };
   return (
     <div className="flex">
       <Sidebar />
-      {/* navbar */}
-      <div className="p-4 xl:ml-10 w-full">
+      <div className="p-4 xl:ml-10 w-full relative">
         <nav class="block w-full max-w-full bg-transparent text-white shadow-none rounded-xl transition-all px-0 py-1">
           <div class="flex flex-col-reverse justify-end gap-6 md:flex-row md:items-center">
             <div class="flex items-center">
@@ -59,7 +93,7 @@ const Financial = () => {
           </div>
         </nav>
         {/* Revenuse Section here */}
-        <div className="ml-20 mb-6">
+        <div>
           <div className="flex items-center">
             <Link to="/">
               {" "}
@@ -67,61 +101,33 @@ const Financial = () => {
             </Link>
           </div>
           <div className="mt-6">
-            <h2 className="font-bold text-2xl">Toatl Revenue </h2>
-            {/* <p>
-              Click one by one for better understanding and get complete
-              information
-            </p> */}
-            {/* Topbar button */}
-            {/* <div className="mt-10 flex gap-4">
-              <button className="bg-[#FD8660] text-white text-center px-5 py-1 rounded-lg">
-                Revenue
-              </button>
-              <button className="bg-[#783DF4] text-white text-center px-5 py-1 rounded-lg">
-                Expence Year-wise
-              </button>
-              <button className="bg-[#FFD600] text-white text-center px-5 py-1 rounded-lg">
-                Profit/ Loss
-              </button>
-            </div> */}
+            <h2 className="font-bold text-2xl">Total Profit </h2>
 
-            {/* Left side button */}
-            <div className="flex mt-10">
-              <div className="">
-                <button
-                  className="text-black p-1 mt-4 rounded mr-5"
-                  style={{ backgroundColor: "rgba(217, 217, 217, 0.53)" }}
-                >
-                  2022-12-15
-                </button>
-                <span className="mr-5">TO</span>
-                <button
-                  className="text-black p-1 mt-4 rounded"
-                  style={{ backgroundColor: "rgba(217, 217, 217, 0.53)" }}
-                >
-                  2023-10-15
-                </button>
-              </div>
-              <button
-                className="text-black p-1 mt-4 rounded ml-96"
-                style={{ backgroundColor: "rgba(217, 217, 217, 0.53)" }}
-              >
-                <div className="flex justify-center items-center">
-                  <span className="ml-2 mr-5">90%</span>
-                  <span className="ml-2">
-                    <FaSearchPlus />
-                  </span>
-                  <span className="ml-2">
-                    <FaSearchMinus />
-                  </span>
-                  <span className="ml-6 mr-2">Reset</span>
+            {/* Clickable div wrapping the TotalProfitChart */}
+            <div
+              style={{ cursor: "pointer", marginTop: "5px" }}
+              onClick={() => setShowProfitButtons(!showProfitButtons)}
+            >
+              <TotalProfitChart />
+              {showProfitButtons && (
+                <div className="absolute top-96 right-72 mt-2  text-black text-center px-2 py-2 rounded-lg space-y-2">
+                  <div className="flex">
+                    <button
+                      onClick={toggleProfit}
+                      className="bg-[#5CFF42] text-white text-center px-5 py-1 rounded-lg mr-6 mt-6"
+                    ></button>
+                    <button
+                      onClick={toggleLoss}
+                      className="bg-[#F95656] text-white text-center px-3 py-1 rounded-lg"
+                    ></button>
+                  </div>
+                  {showProfitSection && (
+                    <RadialProgress showProfitSection={showProfitSection} />
+                  )}
+                  {showLossSection && <RadialProgressLossection />}
                 </div>
-              </button>
+              )}
             </div>
-            {/* Revenue Tiny Chart */}
-            <Link to='/Total-profit'>
-              <RevenueTinyLineChart />
-            </Link>
           </div>
         </div>
       </div>
@@ -129,5 +135,4 @@ const Financial = () => {
   );
 };
 
-export default Financial;
-
+export default TotalProfit;
