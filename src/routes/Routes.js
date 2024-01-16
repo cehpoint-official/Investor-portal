@@ -12,6 +12,7 @@ import TotalRevenue from "../components/TotalRevenue";
 import RevenueProjections from "../components/RevenueProjections";
 import TotalSales from "../components/TotalSales";
 import TotalProfit from "../components/TotalProfit";
+import PitchDeck from "../components/PitchDeck";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "/revenue-projections",
         element: <RevenueProjections />,
+      },
+      {
+        path: "/pitch-deck",
+        element: <PitchDeck />,
       },
       {
         path: "/investor-planning/offer-investment",

@@ -90,7 +90,7 @@ const Dashboard = () => {
                       <span className="text-3xl">↑</span>2.1%
                     </strong>
                     &nbsp;
-                    <img src={revenue} alt="" />
+                    <img className="object-contain" src={revenue} alt="" />
                   </p>
                 </div>
               </div>
@@ -121,7 +121,7 @@ const Dashboard = () => {
                       <span className="text-3xl">↑</span>2.1%
                     </strong>
                     &nbsp;
-                    <img src={expense} alt="" />
+                    <img className="object-contain" src={expense} alt="" />
                   </p>
                 </div>
               </div>
@@ -152,7 +152,7 @@ const Dashboard = () => {
                       <span className="text-3xl">↑</span>2.1%
                     </strong>
                     &nbsp;
-                    <img src={profit} alt="" />
+                    <img className="object-contain " src={profit} alt="" />
                   </p>
                 </div>
               </div>
@@ -183,7 +183,7 @@ const Dashboard = () => {
                       <span className="text-3xl">↑</span>2.1%
                     </strong>
                     &nbsp;
-                    <img src={sales} alt="" />
+                    <img className="object-contain" src={sales} alt="" />
                   </p>
                 </div>
               </div>
